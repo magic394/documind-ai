@@ -14,8 +14,12 @@ bucket_name = "documind-documents"
 [vars]
 JWT_SECRET = "/w+YakcfInum+/4cXufXd79bvXfTJvzUl5ZLhQnyKSI="
 GEMINI_API_KEY = "AIzaSyDcwnmQFMMxiAt9WdB_qOzJWeG6Ni9WuiI"
-GEMINI_MODEL = "gemini-1.5-flash" # or gemini-1.5-pro
+GEMINI_MODEL = "gemini-1.5-flash"
+R2_PUBLIC_URL = "https://pub-177905b4dd364ffe9dafceca9ef69fff.r2.dev"
+ENVIRONMENT = "development"
 
 [env.production]
-vars = { ENVIRONMENT = "production" }
-vars = { R2_PUBLIC_URL = "https://pub-177905b4dd364ffe9dafceca9ef69fff.r2.dev" }
+vars = { 
+  ENVIRONMENT = "production",
+  R2_PUBLIC_URL = "https://pub-177905b4dd364ffe9dafceca9ef69fff.r2.dev"
+}
