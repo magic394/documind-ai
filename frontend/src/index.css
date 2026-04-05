@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-secondary-800;
+  }
+  
+  body {
+    @apply bg-secondary-950 text-white antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-secondary-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-500/50 rounded-full hover:bg-primary-500/70 transition-colors;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-xl backdrop-saturate-150 border border-white/20 shadow-xl;
+  }
+  
+  .neo-morphism {
+    @apply bg-secondary-900 shadow-[20px_20px_60px_#0a0a0a,-20px_-20px_60px_#1e1e1e];
+  }
+  
+  .gradient-border {
+    @apply relative border-2 border-transparent before:absolute before:inset-0 before:-z-10 before:rounded-[inherit] before:p-[2px] before:bg-gradient-to-r before:from-primary-500 before:via-accent-500 before:to-primary-500 before:content-[''];
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 bg-clip-text text-transparent animate-gradient bg-[length:200%_auto];
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_-5px_rgba(99,102,241,0.5)];
+  }
+  
+  .shimmer {
+    @apply relative overflow-hidden before:absolute before:inset-0 before:-translate-x-full before:animate-shimmer before:bg-gradient-to-r before:from-transparent before:via-white/20 before:to-transparent;
+  }
+  
+  .animated-grid {
+    background-size: 50px 50px;
+    background-image: 
+      linear-gradient(to right, rgb(99 102 241 / 0.05) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(99 102 241 / 0.05) 1px, transparent 1px);
+    animation: grid-move 20s linear infinite;
+  }
+  
+  @keyframes grid-move {
+    0% { background-position: 0 0; }
+    100% { background-position: 50px 50px; }
+  }
+  
+  .particle-bg {
+    @apply relative overflow-hidden;
+  }
+  
+  .particle-bg::before {
+    content: '';
+    @apply absolute inset-0 opacity-30;
+    background-image: radial-gradient(circle at 30% 50%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+                      radial-gradient(circle at 70% 50%, rgba(45, 212, 191, 0.3) 0%, transparent 50%);
+    animation: particle-float 10s ease-in-out infinite alternate;
+  }
+  
+  @keyframes particle-float {
+    0% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+    100% { transform: scale(1.2) rotate(5deg); opacity: 0.5; }
+  }
+}
+
+@layer utilities {
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}

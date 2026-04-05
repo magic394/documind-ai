@@ -1,0 +1,21 @@
+name = "documind-ai-api"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "documind-db"
+database_id = "48f0d3e9-aedd-4ed8-a8a5-5b287e424de8"
+
+[[r2_buckets]]
+binding = "DOCUMENTS"
+bucket_name = "documind-documents"
+
+[vars]
+JWT_SECRET = "/w+YakcfInum+/4cXufXd79bvXfTJvzUl5ZLhQnyKSI="
+GEMINI_API_KEY = "AIzaSyDcwnmQFMMxiAt9WdB_qOzJWeG6Ni9WuiI"
+GEMINI_MODEL = "gemini-1.5-flash" # or gemini-1.5-pro
+
+[env.production]
+vars = { ENVIRONMENT = "production" }
+vars = { R2_PUBLIC_URL = "https://pub-177905b4dd364ffe9dafceca9ef69fff.r2.dev" }
